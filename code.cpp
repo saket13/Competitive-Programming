@@ -38,66 +38,12 @@ ll t, n, m, p, q, x, y, a, b, c, mini= LLONG_MAX, maxi= LLONG_MIN, res, ans;
 
 
 //<--------------------------------------------------------------------------------------------------------------------------->
-// Its a range query that is in the range where the price is greter than Y and a point update of -1 since we have to remove 
-// one occuerence of the particular item i.e simple / normal implementation
-
-ll bit[N];
-void update(ll idx, ll val){
-		    while(idx <= n){
-			        bit[idx] += val;
-			        idx += idx & -idx;
-		    }
-}
-
-ll query(ll idx){
-            ll sum = 0;
-		    while(idx > 0){
-			        sum += bit[idx];
-			        idx -= idx & -idx;
-		    }
-            return sum;
-}
-
-string s;
-char c1;
 
 signed  main(){
             
             ios_base::sync_with_stdio(false);
             cin.tie(nullptr);cout.tie(nullptr);
             
-            cin >> t;
-            for (int i=1; i<=t; ++i){
-                    cin >> s >>  n;
-                    mp[s] = n;
-                    arr[s] = 0;
-            }
-
-            cin >> y;
-            while (y-- ){
-                    cin >> c1;
-                    if (c1 == '+'){
-                            cin >> s;
-                            arr[s]++;
-                            update(mp[s], 1);
-                    }
-                    else if (c1 == '-'){
-                            cin >> s;
-                            if (arr[s] > 0){
-                                    arr[s]--;
-                                    update(mp[s], -1);
-                            }
-                    }
-                    else {
-                            cin >> a;
-                            cout << (query(N-1) - query(a)) << endl;
-                            for (int i=0; i<=10; ++i)
-                                what_is(bit[i]);
-                    }
-
-
-            
-            }
 
             
 
