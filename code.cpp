@@ -2,7 +2,7 @@
 //   “Daḷhaṃ sikkhatha santiyā.” - Utthana Sutta (Sutta Nipata)
 //   "Life is a manifestation of where your energy is flowing" - Dandapani
 //    Sāket Sāumyā
-//    MAY 29 2020
+//    /Date/
 //
 
 #include<bits/stdc++.h>
